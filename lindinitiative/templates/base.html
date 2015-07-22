@@ -1,0 +1,62 @@
+{% load static wagtailuserbar %}<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" style="background: linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.7)), url({{ design.background_image.url }}) no-repeat center right fixed; background-size: cover;"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+   <title>{% block title %}{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}{% endblock %}{% block title_suffix %}{% endblock %}</title>
+   <meta name="description" content="{% block meta-description %}{% endblock %}">
+    <meta name="author" content="{% block meta-author %}{% endblock %}">
+
+    {% block viewport %}
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% endblock%}
+
+    {# Global stylesheets #}
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Oswald:400,700,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lindinitiative.css' %}">
+    {% block extra_css %}
+        {# Override this in templates to add extra stylesheets #}
+    {% endblock %}
+
+    {{ analytics }}
+  </head>
+
+  <body class="{% block body_class %}{% endblock %}">
+    {% wagtailuserbar %}
+
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 col-md-offset-1">
+            <img src="{{ design.logo.url }}" class="img-responsive">
+          </div>
+          <div class="col-md-5 text-right">
+            <nav>
+            The Lind Initiative / <a href="#">About</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div id="main" role="main">
+    {% block content %}{% endblock %}
+    </div>
+
+    <footer></footer>
+    {# Global javascript #}
+    <script src="{% static 'modernizer/modernizr.js' %}"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{% static 'jquery/dist/jquery.min.js' %}"><\/script>')</script>
+    <script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lindinitiative.js' %}"></script>
+
+    {% block extra_js %}
+        {# Override this in templates to add extra javascript #}
+    {% endblock %}
+  </body>
+</html>
