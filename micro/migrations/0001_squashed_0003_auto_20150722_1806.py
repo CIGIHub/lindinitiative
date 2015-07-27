@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='MircoPage',
+            name='MicroPage',
             fields=[
                 ('page_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='wagtailcore.Page')),
             ],
@@ -35,15 +35,11 @@ class Migration(migrations.Migration):
                 ('button_text', models.CharField(max_length=256, blank=True)),
                 ('button_link', models.CharField(max_length=256, blank=True)),
                 ('button_external', models.BooleanField(default=False)),
-                ('page', modelcluster.fields.ParentalKey(related_name='sections', to='micro.MircoPage')),
+                ('page', modelcluster.fields.ParentalKey(related_name='sections', to='micro.MicroPage')),
             ],
             options={
                 'ordering': ['sort_order'],
                 'abstract': False,
             },
-        ),
-        migrations.RenameModel(
-            old_name='MircoPage',
-            new_name='MicroPage',
         ),
     ]
