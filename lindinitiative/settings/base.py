@@ -33,6 +33,7 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 
 SECRET_KEY = get_env_variable('SECRET_KEY')
 BASE_URL = get_env_variable('BASE_URL')
+ALLOWED_HOSTS = [get_env_variable('ALLOWED_HOSTS')]
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
