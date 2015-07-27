@@ -1,0 +1,6 @@
+-r base.txt
+
+django-storages==1.1.8
+boto==2.38.0
+
+raven
