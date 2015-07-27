@@ -3,3 +3,6 @@ wagtail==1.0
 psycopg2==2.6.1
 
 django-bower==5.0.4
+
+django-favicon
+django-robots

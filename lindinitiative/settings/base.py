@@ -9,13 +9,30 @@ https://docs.djangoproject.com/en/1.8/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.8/ref/settings/
 """
+from __future__ import absolute_import, unicode_literals
+
+import os
+
+from django.conf import global_settings
+from django.core.exceptions import ImproperlyConfigured
+
+_variable_prefix = "LIND_INITIATIVE_"
+
+
+def get_env_variable(var_name):
+    try:
+        return os.environ[_variable_prefix + var_name]
+    except KeyError:
+        error_msg = "Set the {} environment variable.".format(_variable_prefix + var_name)
+        raise ImproperlyConfigured(error_msg)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-import os
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
+SECRET_KEY = get_env_variable('SECRET_KEY')
+BASE_URL = get_env_variable('BASE_URL')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -35,6 +52,7 @@ INSTALLED_APPS = (
     'compressor',
     'modelcluster',
     'djangobower',
+    'favicon',
 
     'wagtail.wagtailcore',
     'wagtail.wagtailadmin',
@@ -89,6 +107,14 @@ TEMPLATES = [
     },
 ]
 
+TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
+    'django.core.context_processors.request',
+)
+
+COMPRESS_PRECOMPILERS = (
+    ('text/x-scss', 'django_libsass.SassCompiler'),
+)
+
 WSGI_APPLICATION = 'lindinitiative.wsgi.application'
 
 
@@ -141,7 +167,9 @@ MEDIA_URL = '/media/'
 # Wagtail settings
 
 WAGTAIL_SITE_NAME = "lindinitiative"
+WAGTAILIMAGES_FEATURE_DETECTION_ENABLED = False
 
+FAVICON_PATH = STATIC_URL + 'img/favicon.png'
 
 # BOWER settings
 BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR, 'bower')
