@@ -30,7 +30,7 @@ def create_homepage(apps, schema_editor):
     )
 
     Site = apps.get_model('wagtailcore.Site')
-    HomePage = apps.get_model("core", "HomePage")
+    HomePage = apps.get_model("home", "HomePage")
     homepage = HomePage.objects.get(slug="home")
 
     Site.objects.filter(hostname='localhost').delete()
