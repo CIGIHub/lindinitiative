@@ -14,8 +14,8 @@ class MicroPage(Page):
 
 
 class Section(models.Model):
-    heading = models.CharField(max_length=512)
-    body = RichTextField()
+    heading = models.CharField(max_length=512, blank=True)
+    body = RichTextField(blank=True)
     button_text = models.CharField(max_length=256, blank=True)
     button_link = models.CharField(max_length=256, blank=True)
     button_external = models.BooleanField(default=False)
