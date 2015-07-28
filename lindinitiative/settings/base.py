@@ -23,7 +23,7 @@ def get_env_variable(var_name):
     try:
         return os.environ[_variable_prefix + var_name]
     except KeyError:
-        error_msg = "Set the {} environment variable.".format(_variable_prefix + var_name)
+        error_msg = "Set the {} environment variable or add it to .env".format(_variable_prefix + var_name)
         raise ImproperlyConfigured(error_msg)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)

@@ -10,6 +10,7 @@ class Design(models.Model):
     default = models.BooleanField(default=False)
 
     logo = models.ImageField(blank=True, null=True)
+    logo_mobile = models.ImageField(blank=True, null=True)
     background_image = models.ImageField(blank=True, null=True)
 
     def __str__(self):
