@@ -1,8 +1,18 @@
 body {
   background-color: transparent;
-  font-family: "Oswald", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-weight: 100;
+  font-size: 15px;
   color: #777777;
+}
+
+a {
+  color: #030b3e
+}
+
+a h2:hover, a:hover, a h2:focus, a:focus {
+  color: #777777;
+  text-decoration: none;
 }
 
 header {
@@ -32,9 +42,6 @@ h1, h2 {
 
 header .sep {
   margin: 0px 10px;
-}
-
-header a {
   color: #777777;
 }
 
@@ -57,6 +64,10 @@ hr.lind {
 section + section {
   margin-top: 2em;
   border-top: solid thin #777777;
+}
+
+section a.btn {
+  margin-top: 1em;
 }
 
 
@@ -86,7 +97,7 @@ section + section {
 
 }
 
-/* Extra Small Devices, Phones */ 
+/* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px) {
   header {
     font-size: 18px;
@@ -95,7 +106,7 @@ section + section {
   }
 }
 
-/* Custom, iPhone Retina */ 
+/* Custom, iPhone Retina */
 @media only screen and (max-width : 320px) {
 
 }

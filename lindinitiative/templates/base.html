@@ -2,7 +2,7 @@
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" style="background: linear-gradient(rgba(255,255,255,0.7),rgba(255,255,255,0.7)), url({{ design.background_image.url }}) no-repeat center right fixed; background-size: cover;"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" style="background: linear-gradient(rgba(255,255,255,0.85),rgba(255,255,255,0.85)), url({{ design.background_image.url }}) no-repeat center right fixed; background-size: cover;"> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -16,7 +16,7 @@
     {% endblock%}
 
     {# Global stylesheets #}
-    <link href='//fonts.googleapis.com/css?family=Droid+Sans:400,700|Oswald:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro|Droid+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/lindinitiative.css' %}">
     {% block extra_css %}
@@ -35,11 +35,11 @@
           <div class="col-md-10 col-md-offset-1">
             <div class="row">
               <div class="col-sm-6 header-wrap">
-                <img src="{% if design.logo %}{{ design.logo.url }}{% endif %}" class="img-responsive">
+                <a href="/"><img src="{% if design.logo %}{{ design.logo.url }}{% endif %}" class="img-responsive"></a>
               </div>
               <div class="col-sm-6 text-right header-wrap">
                 <nav>
-                  The Lind Initiative <span class="sep">/</span> <a href="/about/">About</a>
+                  <a href="/">The Lind Initiative</a> <span class="sep">/</span> <a href="/about/">About</a>
                 </nav>
               </div>
             </div>
@@ -47,11 +47,11 @@
         </div>
         <div class="row visible-xs">
           <div class="col-xs-2 header-wrap">
-            <img src="{% if design.logo_mobile %}{{ design.logo_mobile.url }}{% endif %}" class="img-responsive">
+            <a href="/"><img src="{% if design.logo_mobile %}{{ design.logo_mobile.url }}{% endif %}" class="img-responsive"></a>
           </div>
           <div class="col-xs-10 text-right header-wrap">
             <nav>
-              The Lind Initiative <span class="sep">/</span> <a href="/about/">About</a>
+              <a href="/">The Lind Initiative</a> <span class="sep">/</span> <a href="/about/">About</a>
             </nav>
           </div>
         </div>
