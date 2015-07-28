@@ -1,3 +1,8 @@
+# Lind Initiative Website
+
+[![Build Status](https://travis-ci.org/OpenCanada/lindinitiative.svg?branch=master)](https://travis-ci.org/OpenCanada/lindinitiative)
+[![Coverage Status](https://coveralls.io/repos/OpenCanada/lindinitiative/badge.svg?branch=master)](https://coveralls.io/r/OpenCanada/lindinitiative?branch=master)
+
 
 ## dotenv
 
