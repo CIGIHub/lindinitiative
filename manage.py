@@ -1,7 +1,8 @@
 #!/usr/bin/env python
-import dotenv
 import os
 import sys
+
+import dotenv
 
 dotenv.read_dotenv()
 
