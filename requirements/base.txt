@@ -6,3 +6,4 @@ django-bower==5.0.4
 
 django-favicon
 django-robots
+django-dotenv
