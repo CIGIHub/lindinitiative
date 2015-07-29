@@ -66,7 +66,20 @@
     {% block content %}{% endblock %}
     </div>
 
-    <footer></footer>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3 text-center">
+            <hr class="lind">
+            {% if design.footer_logo %}
+            <img src="{{ design.footer_logo.url }}" width="26" height="35">
+            <br>
+            {% endif %}
+            The Lind Initiative
+          </div>
+        </div>
+      </div>
+    </footer>
     {# Global javascript #}
     <script src="{% static 'modernizer/modernizr.js' %}"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

@@ -11,6 +11,7 @@ class Design(models.Model):
 
     logo = models.ImageField(blank=True, null=True)
     logo_mobile = models.ImageField(blank=True, null=True)
+    footer_logo = models.ImageField(blank=True, null=True)
     background_image = models.ImageField(blank=True, null=True)
 
     def __str__(self):

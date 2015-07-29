@@ -31,8 +31,13 @@ header .header-wrap {
   padding-bottom: 40px;
 }
 
-#main {
-  padding-bottom: 10em;
+footer {
+  text-transform: uppercase;
+  margin-top: 2em;
+}
+
+footer img {
+  margin: 1em 0em;
 }
 
 h1, h2 {
@@ -84,8 +89,6 @@ section a.btn {
   header {
     font-size: 24px;
   }
-
-
 }
 
 /* Small Devices, Tablets */
@@ -94,7 +97,6 @@ section a.btn {
     padding-top: 20px;
     padding-bottom: 20px;
   }
-
 }
 
 /* Extra Small Devices, Phones */
@@ -102,11 +104,9 @@ section a.btn {
   header {
     font-size: 18px;
     margin-bottom: 0px;
-
   }
 }
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px) {
-
 }
