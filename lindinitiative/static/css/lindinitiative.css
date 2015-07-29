@@ -2,17 +2,24 @@ body {
   background-color: transparent;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 100;
-  font-size: 15px;
-  color: #777777;
+  font-size: 17px;
+  color: #666666;
 }
 
 a {
-  color: #030b3e
+  color: #030b3e;
 }
 
 a h2:hover, a:hover, a h2:focus, a:focus {
-  color: #777777;
+  color: #666666;
   text-decoration: none;
+}
+
+.rich-text a{
+  color: #009999;
+}
+.rich-text a:hover, .rich-text a:focus, .rich-text a:active{
+  color: #030b3e;
 }
 
 header {
@@ -47,28 +54,28 @@ h1, h2 {
 
 header .sep {
   margin: 0px 10px;
-  color: #777777;
+  color: #666666;
 }
 
 .btn {
-  color: #777777;
+  color: #666666;
   text-transform: uppercase;
   font-weight: 100;
 }
 
 .btn-clear {
-  border: solid thin #777777;
+  border: solid thin #666666;
 }
 
 hr.lind {
-  border-top: solid thin #777777;
+  border-top: solid thin #666666;
   height: 1px;
   margin: 0px;
 }
 
 section + section {
   margin-top: 2em;
-  border-top: solid thin #777777;
+  border-top: solid thin #666666;
 }
 
 section a.btn {
@@ -78,17 +85,11 @@ section a.btn {
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px) {
-  header {
-    font-size: 18px;
-  }
+
 }
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
-
-  header {
-    font-size: 18px;
-  }
 }
 
 /* Small Devices, Tablets */
@@ -102,7 +103,6 @@ section a.btn {
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px) {
   header {
-    font-size: 18px;
     margin-bottom: 0px;
   }
 }
