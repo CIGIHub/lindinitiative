@@ -40,7 +40,7 @@ header .header-wrap {
 
 footer {
   text-transform: uppercase;
-  margin-top: 2em;
+  margin: 2em 0em;
 }
 
 footer img {
@@ -108,5 +108,9 @@ section a.btn {
 }
 
 /* Custom, iPhone Retina */
-@media only screen and (max-width : 320px) {
+@media only screen and (max-width : 360px) {
+  header {
+    margin-bottom: 0px;
+    font-size: 15px;
+  }
 }
