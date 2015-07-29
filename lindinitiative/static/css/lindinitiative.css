@@ -67,6 +67,10 @@ header .sep {
   border: solid thin #666666;
 }
 
+.btn i {
+  margin-left: 6px;
+}
+
 hr.lind {
   border-top: solid thin #666666;
   height: 1px;
