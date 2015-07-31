@@ -2,7 +2,7 @@
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" style="background: linear-gradient(rgba(255,255,255,0.85),rgba(255,255,255,0.85)), url({{ design.background_image.url }}) no-repeat center right fixed; background-size: cover;"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" style="background: linear-gradient(rgba(255,255,255,0.4),rgba(255,255,255,0.4)), url({{ design.background_image.url }}) no-repeat center right fixed; background-size: cover;"> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -28,7 +28,7 @@
 
   <body class="{% block body_class %}{% endblock %}">
     {% wagtailuserbar %}
-
+    <div id="overlay"></div>
     <header>
       <div class="container">
         <div class="row hidden-xs">
