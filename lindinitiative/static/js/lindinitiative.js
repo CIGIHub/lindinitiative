@@ -8,8 +8,5 @@ jQuery(document).ready(function($) {
     $(window).on('scroll touchmove', function(){
         $('#overlay').fadeIn("slow");
     });
-
-    $(window).off('scroll touchmove');
-
-
+    
 });
