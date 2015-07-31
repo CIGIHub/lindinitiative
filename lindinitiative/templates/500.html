@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{% load static %}<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -8,10 +8,22 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <title>Internal server error</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {# Global stylesheets #}
+        <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro|Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/lindinitiative.css' %}">
     </head>
     <body>
-        <h1>Internal server error</h1>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3 text-center">
+            <h1>The Lind Initiative</h1>
+            <hr class="lind">
+            <h2>Internal server error</h2>
 
-        <h2>Sorry, there seems to be an error. Please try again soon.</h2>
+            <p class="lead">Sorry, there seems to be an error. Please try again soon.</p>
+          </div>
+        </div>
+      </div>
     </body>
 </html>

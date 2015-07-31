@@ -18,7 +18,9 @@
       {{ section.body|richtext }}
 
       {% if section.button_text %}
-      <a href="{{ section.button_link }}"{% if section.button_external %} target="_blank"{% endif %} class="btn btn-clear">{{ section.button_text }}</a>
+      <a href="{{ section.button_link }}"{% if section.button_external %} target="_blank"{% endif %} class="btn btn-clear">
+        {{ section.button_text }}{% if section.button_external %} <i class="fa fa-external-link"></i>{% endif %}
+      </a>
       {% endif %}
 
     </section>

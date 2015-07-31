@@ -34,7 +34,7 @@ a h2:hover, a:hover, a h2:focus, a:focus {
 
 header {
   text-transform: uppercase;
-  font-size: 30px;
+  font-size: 18px;
   color: #030b3e;
   margin-bottom: 20px;
 }
@@ -50,7 +50,7 @@ header .header-wrap {
 
 footer {
   text-transform: uppercase;
-  margin-top: 2em;
+  margin: 2em 0em;
 }
 
 footer img {
@@ -77,6 +77,10 @@ header .sep {
   border: solid thin #666666;
 }
 
+.btn i {
+  margin-left: 6px;
+}
+
 hr.lind {
   border-top: solid thin #666666;
   height: 1px;
@@ -95,14 +99,11 @@ section a.btn {
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px) {
-  header {
-    font-size: 18px;
-  }
+
 }
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
-
 }
 
 /* Small Devices, Tablets */
@@ -116,11 +117,14 @@ section a.btn {
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px) {
   header {
-    font-size: 18px;
     margin-bottom: 0px;
   }
 }
 
 /* Custom, iPhone Retina */
-@media only screen and (max-width : 320px) {
+@media only screen and (max-width : 360px) {
+  header {
+    margin-bottom: 0px;
+    font-size: 15px;
+  }
 }

@@ -178,4 +178,5 @@ BOWER_INSTALLED_APPS = (
     'jquery#1.11',
     'bootstrap',
     'modernizer',
+    'fontawesome',
 )
