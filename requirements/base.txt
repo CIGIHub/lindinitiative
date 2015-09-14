@@ -4,6 +4,8 @@ psycopg2==2.6.1
 
 django-bower==5.0.4
 
+django-libsass==0.3
+
 django-favicon
 django-robots
 django-dotenv

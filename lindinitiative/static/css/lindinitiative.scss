@@ -1,0 +1,122 @@
+@import "../../../bower/bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+
+body {
+  background-color: transparent;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 100;
+  font-size: 17px;
+  color: #666666;
+}
+
+a {
+  color: #030b3e;
+}
+
+a h2:hover, a:hover, a h2:focus, a:focus {
+  color: #666666;
+  text-decoration: none;
+}
+
+.rich-text a{
+  color: #009999;
+}
+.rich-text a:hover, .rich-text a:focus, .rich-text a:active{
+  color: #030b3e;
+}
+
+header {
+  text-transform: uppercase;
+  font-size: 18px;
+  color: #030b3e;
+  margin-bottom: 20px;
+}
+
+header nav {
+  padding-top: 15px;
+}
+
+header .header-wrap {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+footer {
+  text-transform: uppercase;
+  margin: 2em 0em;
+}
+
+footer img {
+  margin: 1em 0em;
+}
+
+h1, h2 {
+  font-family: "Droid Sans", sans-serif;
+  color: #030b3e
+}
+
+header .sep {
+  margin: 0px 10px;
+  color: #666666;
+}
+
+.btn {
+  color: #666666;
+  text-transform: uppercase;
+  font-weight: 100;
+}
+
+.btn-clear {
+  border: solid thin #666666;
+}
+
+.btn i {
+  margin-left: 6px;
+}
+
+hr.lind {
+  border-top: solid thin #666666;
+  height: 1px;
+  margin: 0px;
+}
+
+section + section {
+  margin-top: 2em;
+  border-top: solid thin #666666;
+}
+
+section a.btn {
+  margin-top: 1em;
+}
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+  header .header-wrap {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+  header {
+    margin-bottom: 0px;
+  }
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 360px) {
+  header {
+    margin-bottom: 0px;
+    font-size: 15px;
+  }
+}
