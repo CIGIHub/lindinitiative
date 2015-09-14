@@ -1,6 +1,6 @@
 body {
   font-family: "Source Sans Pro", sans-serif;
-  font-weight: 100;
+  font-weight: 200;
   font-size: 17px;
   background-color: #e1fdfd;
 }
@@ -12,6 +12,13 @@ a {
 a h2:hover, a:hover, a h2:focus, a:focus {
   color: #666666;
   text-decoration: none;
+}
+
+h1, h2 {
+  color: $blue;
+}
+h2{
+  font-weight: bold;
 }
 
 .rich-text a{
@@ -35,7 +42,12 @@ header {
   width: 226px;
 }
 
+.navbar-default .navbar-nav > li.dropdown{
+  margin-top: 14px;
+}
 .navbar-default .navbar-nav > li.dropdown > a{
+  border-left: 1px solid #666;
+  padding: 10px 15px;
   color: #cccccc;
   font-weight: light;
 }
@@ -53,21 +65,22 @@ header {
 
 footer {
   text-transform: uppercase;
-  margin: 2em 0em;
+  margin-top: 2em;
+  background-color: $blue;
+  color: #ffffff;
 }
 
 footer img {
   margin: 1em 0em;
 }
 
-h1, h2 {
-  font-family: "Droid Sans", sans-serif;
-  color: #030b3e
-}
-
-header .sep {
-  margin: 0px 10px;
-  color: #666666;
+footer .dropdown{
+  border-left: solid 1px #666666;
+  padding-left: 0.8em;
+  display:inline-block;
+  a{
+    color: #ccc;
+  }
 }
 
 .btn {
@@ -84,19 +97,14 @@ header .sep {
   margin-left: 6px;
 }
 
-hr.lind {
-  border-top: solid thin #666666;
-  height: 1px;
-  margin: 0px;
-}
-
-section + section {
-  margin-top: 2em;
-  border-top: solid thin #666666;
+section {
+  margin-bottom: 2em;
+  border-bottom: solid thin #666666;
 }
 
 section a.btn {
   margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 
