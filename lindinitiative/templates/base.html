@@ -85,12 +85,21 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6 col-md-offset-3 text-center">
-            <hr class="lind">
-            {% if design.footer_logo %}
-            <img src="{{ design.footer_logo.url }}" width="26" height="35">
-            <br>
-            {% endif %}
-            The Lind Initiative
+            <img src="{% static 'img/lind-ubc-logo.png' width-226 %}">
+
+                      <div class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Year 1: Inequality <span class="caret"></span></a>
+                        <!--<ul class="dropdown-menu">-->
+                          <!--<li><a href="#">Action</a></li>-->
+                          <!--<li><a href="#">Another action</a></li>-->
+                          <!--<li><a href="#">Something else here</a></li>-->
+                          <!--<li role="separator" class="divider"></li>-->
+                          <!--<li><a href="#">Separated link</a></li>-->
+                          <!--<li role="separator" class="divider"></li>-->
+                          <!--<li><a href="#">One more separated link</a></li>-->
+                        <!--</ul>-->
+                      </div>
+
           </div>
         </div>
       </div>
