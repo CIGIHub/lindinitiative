@@ -1,0 +1,110 @@
+/* line 1, /Users/natashascott/Development/Projects/Lind/lindinitiative/static/css/lindinitiative.scss */
+body {
+  background-color: transparent;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 100;
+  font-size: 17px;
+  color: #666666; }
+
+/* line 9, /Users/natashascott/Development/Projects/Lind/lindinitiative/static/css/lindinitiative.scss */
+a {
+  color: #030b3e; }
+
+/* line 13, /Users/natashascott/Development/Projects/Lind/lindinitiative/static/css/lindinitiative.scss */
+a h2:hover, a:hover, a h2:focus, a:focus {
+  color: #666666;
+  text-decoration: none; }
+
+/* line 18, /Users/natashascott/Development/Projects/Lind/lindinitiative/static/css/lindinitiative.scss */
+.rich-text a {
+  color: #009999; }
+
+/* line 21, /Users/natashascott/Development/Projects/Lind/lindinitiative/static/css/lindinitiative.scss */
+.rich-text a:hover, .rich-text a:focus, .rich-text a:active {
+  color: #030b3e; }
+
+/* line 25, /Users/natashascott/Development/Projects/Lind/lindinitiative/static/css/lindinitiative.scss */
+header {
+  text-transform: uppercase;
+  font-size: 18px;
+  color: #030b3e;
+  margin-bottom: 20px; }
+
+/* line 32, /Users/natashascott/Development/Projects/Lind/lindinitiative/static/css/lindinitiative.scss */
+header nav {
+  padding-top: 15px; }
+
+/* line 36, /Users/natashascott/Development/Projects/Lind/lindinitiative/static/css/lindinitiative.scss */
+header .header-wrap {
+  padding-top: 40px;
+  padding-bottom: 40px; }
+
+/* line 41, /Users/natashascott/Development/Projects/Lind/lindinitiative/static/css/lindinitiative.scss */
+footer {
+  text-transform: uppercase;
+  margin: 2em 0em; }
+
+/* line 46, /Users/natashascott/Development/Projects/Lind/lindinitiative/static/css/lindinitiative.scss */
+footer img {
+  margin: 1em 0em; }
+
+/* line 50, /Users/natashascott/Development/Projects/Lind/lindinitiative/static/css/lindinitiative.scss */
+h1, h2 {
+  font-family: "Droid Sans", sans-serif;
+  color: #030b3e; }
+
+/* line 55, /Users/natashascott/Development/Projects/Lind/lindinitiative/static/css/lindinitiative.scss */
+header .sep {
+  margin: 0px 10px;
+  color: #666666; }
+
+/* line 60, /Users/natashascott/Development/Projects/Lind/lindinitiative/static/css/lindinitiative.scss */
+.btn {
+  color: #666666;
+  text-transform: uppercase;
+  font-weight: 100; }
+
+/* line 66, /Users/natashascott/Development/Projects/Lind/lindinitiative/static/css/lindinitiative.scss */
+.btn-clear {
+  border: solid thin #666666; }
+
+/* line 70, /Users/natashascott/Development/Projects/Lind/lindinitiative/static/css/lindinitiative.scss */
+.btn i {
+  margin-left: 6px; }
+
+/* line 74, /Users/natashascott/Development/Projects/Lind/lindinitiative/static/css/lindinitiative.scss */
+hr.lind {
+  border-top: solid thin #666666;
+  height: 1px;
+  margin: 0px; }
+
+/* line 80, /Users/natashascott/Development/Projects/Lind/lindinitiative/static/css/lindinitiative.scss */
+section + section {
+  margin-top: 2em;
+  border-top: solid thin #666666; }
+
+/* line 85, /Users/natashascott/Development/Projects/Lind/lindinitiative/static/css/lindinitiative.scss */
+section a.btn {
+  margin-top: 1em; }
+
+/* Large Devices, Wide Screens */
+/* Medium Devices, Desktops */
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+  /* line 101, /Users/natashascott/Development/Projects/Lind/lindinitiative/static/css/lindinitiative.scss */
+  header .header-wrap {
+    padding-top: 20px;
+    padding-bottom: 20px; } }
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+  /* line 109, /Users/natashascott/Development/Projects/Lind/lindinitiative/static/css/lindinitiative.scss */
+  header {
+    margin-bottom: 0px; } }
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width: 360px) {
+  /* line 116, /Users/natashascott/Development/Projects/Lind/lindinitiative/static/css/lindinitiative.scss */
+  header {
+    margin-bottom: 0px;
+    font-size: 15px; } }

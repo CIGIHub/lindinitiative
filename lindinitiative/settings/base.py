@@ -133,13 +133,9 @@ DATABASES = {
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 
@@ -151,6 +147,7 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'compressor.finders.CompressorFinder',
     'djangobower.finders.BowerFinder',
+    'compressor.finders.CompressorFinder',
 )
 
 STATICFILES_DIRS = (
@@ -176,7 +173,17 @@ BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR, 'bower')
 
 BOWER_INSTALLED_APPS = (
     'jquery#1.11',
-    'bootstrap',
+    'bootstrap-sass',
     'modernizer',
     'fontawesome',
 )
+
+# Django compressor settings
+# http://django-compressor.readthedocs.org/en/latest/settings/
+COMPRESS_PRECOMPILERS = (
+    ('text/x-scss', 'django_libsass.SassCompiler'),
+)
+
+# COMPRESS_ENABLED = True
+
+
