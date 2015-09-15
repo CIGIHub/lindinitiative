@@ -33,12 +33,7 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 
 SECRET_KEY = get_env_variable('SECRET_KEY')
 BASE_URL = get_env_variable('BASE_URL')
-# ALLOWED_HOSTS = [get_env_variable('ALLOWED_HOSTS')]
-ALLOWED_HOSTS = [
-    'lindinitiative.ca',
-    'www.lindinitiative.ca',
-    'lindinitiative.ubc.ca',
-]
+ALLOWED_HOSTS = [get_env_variable('ALLOWED_HOSTS')]
 
 
 # Quick-start development settings - unsuitable for production
@@ -75,7 +70,8 @@ INSTALLED_APPS = (
 
     'search',
     'micro',
-    'design'
+    'design',
+    'events',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -86,7 +82,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.security.SecurityMiddleware',
+    # 'django.middleware.security.SecurityMiddleware',
 
     'wagtail.wagtailcore.middleware.SiteMiddleware',
     'wagtail.wagtailredirects.middleware.RedirectMiddleware',
@@ -191,5 +187,3 @@ COMPRESS_PRECOMPILERS = (
 )
 
 # COMPRESS_ENABLED = True
-
-
