@@ -31,10 +31,14 @@ h2{
 header {
   text-transform: uppercase;
   font-size: 18px;
+<<<<<<< HEAD
 }
 
 .navbar{
   margin-bottom: 0;
+=======
+  margin-bottom: 20px;
+>>>>>>> 63d5f9b634c294faad6300621be41bdba15d02fe
 }
 
 .navbar-brand{
@@ -110,7 +114,6 @@ section a.btn {
   margin-bottom: 1em;
 }
 
-
 .jumbotron{
   padding: 0px;
 }
@@ -164,7 +167,6 @@ section a.btn {
 
 }
 
-
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px) {
 
@@ -176,6 +178,7 @@ section a.btn {
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
+
   .main-feature{
     min-height: 400px;
     h1 a{
