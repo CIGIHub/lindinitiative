@@ -31,7 +31,10 @@ h2{
 header {
   text-transform: uppercase;
   font-size: 18px;
-  margin-bottom: 20px;
+}
+
+.navbar{
+  margin-bottom: 0;
 }
 
 .navbar-brand{
@@ -108,6 +111,60 @@ section a.btn {
 }
 
 
+.jumbotron{
+  padding: 0px;
+}
+
+.main-feature{
+  background: #22a8ff;
+  min-height: 470px;
+  position: relative;
+
+  .btn{
+    margin-top: 2em;
+  }
+
+  h1 a{
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 60px;
+  }
+  .btn{
+    border: solid 1px #fff;
+    color: #fff;
+  }
+
+  .feature-image{
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    width: 100%;
+    height: 100%;
+    background: $blue;
+    opacity: 0.6;
+  }
+
+  .feature-image-overlay{
+    position: absolute;
+    z-index: 2;
+    display: block;
+    content: "";
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: rgba(0,0,0, 0.5);
+  }
+
+  .feature-wrapper {
+    position: absolute;
+    z-index: 10;
+    top: 5%;
+    width: 100%;
+  }
+
+}
+
+
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px) {
 
@@ -119,16 +176,22 @@ section a.btn {
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
-  header .header-wrap {
-    padding-top: 20px;
-    padding-bottom: 20px;
+  .main-feature{
+    min-height: 400px;
+    h1 a{
+      font-size: 46px;
+    }
   }
+
 }
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px) {
-  header {
-    margin-bottom: 0px;
+  .main-feature{
+    min-height: 320px;
+    h1 a{
+      font-size: 32px;
+    }
   }
 }
 
