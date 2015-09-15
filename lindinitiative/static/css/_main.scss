@@ -34,11 +34,14 @@ header {
   margin-bottom: 20px;
 }
 
+/**** navbar over-rides   *****/
+
 .navbar-brand{
   height: auto;
   padding: 14px;
 }
 .navbar-brand > img{
+  display: inline;
   width: 226px;
 }
 
@@ -55,12 +58,25 @@ header {
   color: #fff;
 }
 
+.nav > li > a:hover, .nav > li > a:focus{
+    background: none;
+    color: #666;
+  }
+  .navbar-default .navbar-nav > li.dropdown > a:hover, .navbar-default .navbar-nav > li.dropdown > a:focus{
+    color: #666;
+  }
+
 .navbar-nav.navbar-right > li{
   margin-top: 18px;
 }
+
 .navbar-nav.navbar-right > li > a{
   padding: 5px 10px;
   margin-right: 15px;
+  border: solid 1px #666666;
+  border-radius: 4px;
+  padding: 6px 12px;
+  margin-right: 10px;
 }
 
 footer {
@@ -122,6 +138,20 @@ section a.btn {
   header .header-wrap {
     padding-top: 20px;
     padding-bottom: 20px;
+  }
+  .navbar-nav.navbar-right > li > a {
+    border: none;
+    border-radius: none;
+  }
+  .navbar-nav{
+    margin: 0px 10px;
+  }
+  .navbar-default .navbar-nav > li.dropdown > a {
+    border-left: 0px;
+    color: #fff;
+  }
+  .navbar-nav.navbar-right{
+    padding-bottom: 15px;
   }
 }
 
