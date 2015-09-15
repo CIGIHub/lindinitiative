@@ -1,0 +1,171 @@
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 200;
+  font-size: 17px;
+  background-color: #e1fdfd;
+}
+
+a {
+  color: $blue
+}
+
+a h2:hover, a:hover, a h2:focus, a:focus {
+  color: #666666;
+  text-decoration: none;
+}
+
+h1, h2 {
+  color: $blue;
+}
+h2{
+  font-weight: bold;
+}
+
+.rich-text a{
+  color: #009999;
+}
+.rich-text a:hover, .rich-text a:focus, .rich-text a:active{
+  color: #030b3e;
+}
+
+header {
+  text-transform: uppercase;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/**** navbar over-rides   *****/
+
+.navbar-brand{
+  height: auto;
+  padding: 14px;
+}
+.navbar-brand > img{
+  display: inline;
+  width: 226px;
+}
+
+.navbar-default .navbar-nav > li.dropdown{
+  margin-top: 14px;
+}
+.navbar-default .navbar-nav > li.dropdown > a{
+  border-left: 1px solid #666;
+  padding: 10px 15px;
+  color: #cccccc;
+  font-weight: light;
+}
+.navbar-default .navbar-nav > li.dropdown .caret{
+  color: #fff;
+}
+
+.nav > li > a:hover, .nav > li > a:focus{
+    background: none;
+    color: #666;
+  }
+  .navbar-default .navbar-nav > li.dropdown > a:hover, .navbar-default .navbar-nav > li.dropdown > a:focus{
+    color: #666;
+  }
+
+.navbar-nav.navbar-right > li{
+  margin-top: 18px;
+}
+
+.navbar-nav.navbar-right > li > a{
+  padding: 5px 10px;
+  margin-right: 15px;
+  border: solid 1px #666666;
+  border-radius: 4px;
+  padding: 6px 12px;
+  margin-right: 10px;
+}
+
+footer {
+  text-transform: uppercase;
+  margin-top: 2em;
+  background-color: $blue;
+  color: #ffffff;
+}
+
+footer img {
+  margin: 1em 0em;
+}
+
+footer .dropdown{
+  border-left: solid 1px #666666;
+  padding-left: 0.8em;
+  display:inline-block;
+  a{
+    color: #ccc;
+  }
+}
+
+.btn {
+  color: #666666;
+  text-transform: uppercase;
+  font-weight: 100;
+}
+
+.btn-clear {
+  border: solid thin #666666;
+}
+
+.btn i {
+  margin-left: 6px;
+}
+
+section {
+  margin-bottom: 2em;
+  border-bottom: solid thin #666666;
+}
+
+section a.btn {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+  header .header-wrap {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .navbar-nav.navbar-right > li > a {
+    border: none;
+    border-radius: none;
+  }
+  .navbar-nav{
+    margin: 0px 10px;
+  }
+  .navbar-default .navbar-nav > li.dropdown > a {
+    border-left: 0px;
+    color: #fff;
+  }
+  .navbar-nav.navbar-right{
+    padding-bottom: 15px;
+  }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+  header {
+    margin-bottom: 0px;
+  }
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 360px) {
+  header {
+    margin-bottom: 0px;
+    font-size: 15px;
+  }
+}
