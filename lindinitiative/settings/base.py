@@ -56,6 +56,8 @@ INSTALLED_APPS = (
     'djangobower',
     'favicon',
 
+    'core',
+
     'wagtail.wagtailcore',
     'wagtail.wagtailadmin',
     'wagtail.wagtailsearch',
@@ -111,6 +113,7 @@ TEMPLATES = [
 
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
     'django.core.context_processors.request',
+    'core.context_processors.settings_context'
 )
 
 COMPRESS_PRECOMPILERS = (
