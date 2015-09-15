@@ -75,7 +75,12 @@
               </nav>
     </header>
     <div id="main" role="main">
-    {% block content %}{% endblock %}
+      {% block feature %}
+        {% include 'feature.html' %}
+      {% endblock %}
+
+      {% block content %}{% endblock %}
+
     </div>
 
     <footer>

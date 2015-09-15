@@ -1,0 +1,26 @@
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block feature %}
+<div class="jumbotron main-feature overlay">
+    <div class="feature-image" style="background-image: url('{% static 'img/background-photo.jpg' %}')">
+        <a href="{{ self.typed_featured_item.url }}">
+            <div class="feature-image-overlay">
+            </div>
+        </a>
+    </div>
+    <div class="container feature-wrapper">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="feature-text">
+                    <h1>
+                    <a href="#">The focus of the Lind Initiative’s inaugural year is Inequality. </a></h1>
+                    <a href="#" class="btn btn-clear">Find out more</a>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}
