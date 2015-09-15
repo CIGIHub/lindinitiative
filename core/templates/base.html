@@ -51,7 +51,7 @@
                       <span class="icon-bar"></span>
                     </button>
 
-                    <a class="navbar-brand" href="#"><img src="{% static 'img/lind-ubc-logo.png' width-226 %}"></a>
+                    <a class="navbar-brand" href="/"><img src="{% static 'img/lind-ubc-logo.png' width-226 %}"></a>
                   </div>
                   <!-- Collect the nav links, forms, and other content for toggling -->
                   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -81,9 +81,6 @@
     </header>
 
     <div id="main" role="main">
-      {% block feature %}
-        {% include 'feature.html' %}
-      {% endblock %}
 
       {% block content %}{% endblock %}
 
