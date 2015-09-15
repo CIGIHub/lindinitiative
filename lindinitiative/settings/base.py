@@ -74,6 +74,7 @@ INSTALLED_APPS = (
     'micro',
     'design',
     'events',
+    'blog',
 )
 
 MIDDLEWARE_CLASSES = (
