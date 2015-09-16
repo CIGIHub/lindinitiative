@@ -1,11 +1,13 @@
-$navbar-default-color:          #ffffff !default;
-$navbar-default-bg:                #002045;
+
+$navbar-default-color:          #ffffff;
+$navbar-default-bg:             #002045;
 $navbar-default-border:   none;
 $navbar-border-radius: none;
 
-$navbar-default-link-color:                #fff!default;
-$navbar-default-link-hover-color:          #777 !default;
-$navbar-default-link-hover-bg:             transparent !default;
+$navbar-default-link-color:                #fff;
+$navbar-default-link-hover-color:          #777;
+$navbar-default-link-hover-bg:             none;
+
 $navbar-default-link-active-color:         #555 !default;
 $navbar-default-link-active-bg:            darken($navbar-default-bg, 6.5%) !default;
 $navbar-default-link-disabled-color:       #ccc !default;
@@ -15,6 +17,9 @@ $navbar-default-toggle-icon-bar-bg: #ffffff;
 
 $navbar-height: 70px;
 
-.navbar-brand > img{
-  display: inline;
-}
+$navbar-default-toggle-hover-bg:   none;
+$navbar-default-toggle-border-color:  #ffffff;
+
+
+$navbar-height: 70px;
+>>>>>>> c8d7966b0d1c29abb791aa9bf927bc93b18c353a
