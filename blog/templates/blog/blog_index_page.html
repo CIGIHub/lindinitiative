@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}template-{{ self.get_verbose_name|slugify }}{% endblock %}
+
+{% block content %}
+    {% if self.title %}
+        <h1>{{ self.title }}</h1>
+    {% endif %}
+    {% if self.intro %}
+        {{ self.intro|richtext }}
+    {% endif %}
+
+    {% for item in self.blogs %}
+        <section>
+            <h2><a href="{{ item.url }}">{{ item.title }}</a></h2>
+            <div class="post-image">{% image item.image fill-750x383 %}</div>
+            <div class="short-description">{{ item.short_description }}</div>
+            <a class="btn btn-clear" href="{% if item.button_link %} {{ item.button_link }} {% else %} {{ item.url }} {% endif %}">
+            {% if item.button_text %} {{ item.button_text }} {% else %} Read More {% endif %}</a>
+        </section>
+
+    {% endfor %}
+
+{% endblock %}
