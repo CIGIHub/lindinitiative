@@ -71,6 +71,7 @@ INSTALLED_APPS = (
     'wagtail.wagtailforms',
 
     'search',
+    'basic_site',
     'micro',
     'design',
     'events',
