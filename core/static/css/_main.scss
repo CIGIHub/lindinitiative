@@ -1,3 +1,6 @@
+$sans-serif: "Source Sans Pro", Helvetica, sans-serif;
+$blue: #002045;
+
 body {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 200;
@@ -52,23 +55,20 @@ header {
   width: 226px;
 }
 
-.navbar-default .navbar-nav > li.dropdown{
+.navbar-default .navbar-nav.courses > li{
   margin-top: 14px;
 }
-.navbar-default .navbar-nav > li.dropdown > a{
+.navbar-default .navbar-nav.courses >li > a{
   border-left: 1px solid #666;
   padding: 10px 15px;
   color: #cccccc;
   font-weight: light;
 }
-.navbar-default .navbar-nav > li.dropdown .caret{
-  color: #fff;
-}
 .nav > li > a:hover, .nav > li > a:focus{
     background: none;
     color: #666;
   }
-  .navbar-default .navbar-nav > li.dropdown > a:hover, .navbar-default .navbar-nav > li.dropdown > a:focus{
+  .navbar-default .navbar-nav.courses > li > a:hover, .navbar-default .navbar-nav.courses > li > a:focus{
     color: #666;
   }
 
@@ -94,9 +94,10 @@ footer {
 
 footer img {
   margin: 1em 0em;
+  display: inline-block;
 }
 
-footer .dropdown{
+footer .courses {
   border-left: solid 1px #666666;
   padding-left: 0.8em;
   display:inline-block;
