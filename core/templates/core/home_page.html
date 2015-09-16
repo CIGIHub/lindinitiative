@@ -6,15 +6,41 @@
 
 
 {% block feature %}
-    {% include 'includes/feature.html' %}
+    <div class="jumbotron main-feature overlay">
+    {% image self.featured_item.specific.image fill-2048x1200 as background_image %}
+    <div class="feature-image" style="background-image: url('{{ background_image.url }}') ">
+    </div>
+    <div class="container feature-wrapper">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="feature-text">
+                    <h1>
+                        <a href="{% if self.featured_item.specific.button_link %} {{ self.featured_item.specific.button_link }} {% else %} {{ self.featured_item.url }} {% endif %}">{{ self.featured_item.title }}</a>
+                    </h1>
+
+                    <a class="btn btn-clear" href="{% if self.featured_item.specific.button_link %} {{ self.featured_item.specific.button_link }} {% else %} {{ self.featured_item.url }} {% endif %}">
+                        {% if self.featured_item.specific.button_text %} {{ self.featured_item.specific.button_text }} {% else %} Read More {% endif %}</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
 {% endblock %}
 
 {% block content %}
         {% for item in self.latest %}
-        <section>
-            <h2>{{ item.title }}</h2>
 
-        </section>
+            <section>
+                <h2><a href="{{ item.url }}">{{ item.title }}</a></h2>
+                {% image item.specific.image fill-750x383 %}
+
+                <div class="short-description">{{ item.specific.short_description }}</div>
+                <a class="btn btn-clear" href="{% if item.specific.button_link %} {{ item.specific.button_link }} {% else %} {{ item.url }} {% endif %}">
+                {% if item.specific.button_text %} {{ item.specific.button_text }} {% else %} Read More {% endif %}</a>
+            </section>
+
 
     {% endfor %}
 
