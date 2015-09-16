@@ -10,7 +10,7 @@ from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 
 
 class FeatureMixin(models.Model):
-    short_description = models.CharField(max_length=256, blank=True)
+    short_description = models.CharField(max_length=256, blank=False)
     button_text = models.CharField(max_length=256, blank=True)
     button_link = models.CharField(max_length=256, blank=True)
     button_external = models.BooleanField(default=False)

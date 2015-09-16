@@ -19,9 +19,11 @@ a h2:hover, a:hover, a h2:focus, a:focus {
 
 h1, h2 {
   color: $blue;
-}
-h2{
   font-weight: bold;
+}
+
+h1, .template-home-page h2{
+  font-size: 30px;
 }
 
 .rich-text a{
@@ -120,6 +122,10 @@ footer .courses {
   margin-left: 6px;
 }
 
+#main{
+  margin-top: 2em;
+}
+
 section {
   margin-bottom: 2em;
   border-bottom: solid thin #666666;
@@ -130,13 +136,16 @@ section a.btn {
   margin-bottom: 2em;
 }
 
-.short-description{
-  margin-top: 1em;
+.post-image{
+  margin-bottom: 1em;
 }
 
-
-
-
+.meta-data{
+  margin-bottom: 2em;
+  font-weight: bold;
+  font-size: 14px;
+  color: #040404;
+}
 .jumbotron{
   padding: 0px;
 }
@@ -153,7 +162,6 @@ section a.btn {
   h1 a {
     text-transform: uppercase;
     color: #ffffff;
-    font-weight: bold;
     font-size: 60px;
   }
   .btn {
