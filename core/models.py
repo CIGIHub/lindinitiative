@@ -1,6 +1,5 @@
 from __future__ import absolute_import, unicode_literals
 
-
 from basic_site import models as basic_site_models
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
