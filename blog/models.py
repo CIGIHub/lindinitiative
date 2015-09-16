@@ -5,6 +5,8 @@ from wagtail.wagtailadmin.edit_handlers import FieldPanel
 from wagtail.wagtailcore.fields import RichTextField
 from wagtail.wagtailcore.models import Page
 
+from core.models import FeatureMixin
+
 
 class BlogIndexPage(Page):
     intro = RichTextField(blank=True)
@@ -51,9 +53,10 @@ BlogIndexPage.content_panels = [
 BlogIndexPage.promote_panels = Page.promote_panels
 
 
-class BlogPage(Page):
+class BlogPage(Page, FeatureMixin):
     body = RichTextField()
     date = models.DateField("Post date")
+    author = models.TextField(max_length=512, blank=True)
 
     @property
     def blog_index(self):
@@ -63,7 +66,8 @@ class BlogPage(Page):
 BlogPage.content_panels = [
     FieldPanel('title', classname="full title"),
     FieldPanel('date'),
+    FieldPanel('author'),
     FieldPanel('body', classname="full"),
 ]
 
-BlogPage.promote_panels = Page.promote_panels
+BlogPage.promote_panels = Page.promote_panels + FeatureMixin.promote_panels
