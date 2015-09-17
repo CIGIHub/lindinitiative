@@ -82,3 +82,4 @@ class LindBasePage(Page, basic_site_models.BasePage, FeatureMixin):
     ]
 
     promote_panels = Page.promote_panels + FeatureMixin.promote_panels
+
