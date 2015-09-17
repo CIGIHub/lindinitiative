@@ -52,7 +52,9 @@
                 </a>
             </section>
 
-
     {% endfor %}
-
+    {{ self.more_link }}
+    {% if self.more_items %}
+    HERE
+    {% endif %}
 {% endblock %}

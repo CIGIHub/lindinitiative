@@ -234,16 +234,6 @@ section {
   }
 }
 
-.main-feature:hover{
-  background:none;
-  .feature-image{
-    opacity: 1;
-  }
-  .feature-wrapper{
-    display: none;
-  }
-}
-
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px) {
