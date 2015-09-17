@@ -53,7 +53,7 @@ class HomePage(Page):
 
     def latest(self):
         # import pdb; pdb.set_trace()
-        latest = Page.objects.live().order_by('-first_published_at').exclude(title = 'Root').exclude(pk=self.featured_item.pk)[:self.number_homepage_items]
+        latest = Page.objects.live().order_by('-first_published_at').exclude(title='Root').exclude(pk=self.featured_item.pk)[:self.number_homepage_items]
 
         return latest
 
@@ -89,7 +89,7 @@ class SiteIndexPage(Page):
     @property
     def pages(self):
 
-        pages = Page.objects.live().order_by('-first_published_at').exclude(title = 'Root').exclude(pk=self.pk)
+        pages = Page.objects.live().order_by('-first_published_at').exclude(title='Root').exclude(pk=self.pk)
         return pages
 
 SiteIndexPage.content_panels = [

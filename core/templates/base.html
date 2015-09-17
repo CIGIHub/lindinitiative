@@ -20,6 +20,11 @@
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,200,600,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{% static 'fontawesome/css/font-awesome.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/lindinitiative.css' %}">
+
+    {% load compress %}
+    {% compress css %}
+            <link rel="stylesheet" type="text/x-scss" href="{% static 'css/lindinitiative.scss' %}">
+    {% endcompress %}
     {% block extra_css %}
         {# Override this in templates to add extra stylesheets #}
     {% endblock %}
@@ -104,9 +109,5 @@
         {# Override this in templates to add extra javascript #}
     {% endblock %}
 
-  {% load compress %}
-    {% compress css %}
-            <link rel="stylesheet" type="text/x-scss" href="{% static 'css/lindinitiative.scss' %}">
-    {% endcompress %}
   </body>
 </html>
