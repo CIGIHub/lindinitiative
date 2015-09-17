@@ -6,6 +6,7 @@ body {
   font-weight: 200;
   font-size: 17px;
   background-color: #e1fdfd;
+  color: black;
 }
 
 a {
@@ -17,7 +18,16 @@ a h2:hover, a:hover, a h2:focus, a:focus {
   text-decoration: none;
 }
 
-h1, h2 {
+h1{
+  text-transform: uppercase;
+  color: #666;
+  font-weight: bold;
+  border-bottom: solid thin black;
+  padding-bottom: 0.2em;
+  margin-bottom: 0.8em;
+}
+
+h2 {
   color: $blue;
   font-weight: bold;
 }
@@ -92,6 +102,8 @@ footer {
   margin-top: 2em;
   background-color: $blue;
   color: #ffffff;
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
 
 footer img {
@@ -129,15 +141,44 @@ footer .courses {
 section {
   margin-bottom: 2em;
   border-bottom: solid thin #666666;
+
+  a.btn {
+    transition: background-color 0.5s ease;
+    margin-top: 1em;
+    margin-bottom: 2em;
+  }
+  a.btn:hover{
+    background-color: $blue;
+    color: white;
+  }
+
 }
 
-section a.btn {
-  margin-top: 1em;
-  margin-bottom: 2em;
-}
-
-.post-image{
+.image-overlay{
+  transition: background-color 0.5s ease;
+  background-color: #22a8ff;
+  min-height: 383px;
+  position: relative;
   margin-bottom: 1em;
+
+  .post-image{
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease;
+    opacity: 0.5;
+  }
+}
+
+.image-overlay:hover{
+  cursor: pointer;
+  background:none;
+  .post-image{
+    opacity: 1;
+  }
 }
 
 .meta-data{
@@ -151,7 +192,8 @@ section a.btn {
 }
 
 .main-feature {
-  background: #22a8ff;
+  transition: background-color 0.5s ease;
+  background-color: #22a8ff;
   min-height: 470px;
   position: relative;
 
@@ -177,12 +219,23 @@ section a.btn {
     width: 100%;
     height: 100%;
     background-color:#2dadff;
+    transition: opacity 0.5s ease;
     opacity: 0.5;
   }
 
   .feature-wrapper {
     z-index: 10;
     padding-top: 2em;
+  }
+}
+
+.main-feature:hover{
+  background:none;
+  .feature-image{
+    opacity: 1;
+  }
+  .feature-wrapper{
+    display: none;
   }
 }
 

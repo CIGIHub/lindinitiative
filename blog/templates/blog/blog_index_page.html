@@ -15,7 +15,16 @@
     {% for item in self.blogs %}
         <section>
             <h2><a href="{% if item.button_link %} {{ item.button_link }} {% else %} {{ item.url }} {% endif %}">{{ item.title }}</a></h2>
-            <div class="post-image">{% image item.image fill-750x383 %}</div>
+            {% if item.image %}
+                <a href="{% if item.button_link %} {{ item.button_link }} {% else %} {{ item.url }} {% endif %}">
+                <div class="image-overlay">
+                    {% image item.image fill-750x383 as background_image %}
+                    <div class="post-image " style="background-image: url('{{ background_image.url }}') ">
+                    </div>
+                </div>
+                </a>
+            {% endif %}
+
             <div class="short-description">{{ item.short_description }}</div>
             <a class="btn btn-clear" href="{% if item.button_link %} {{ item.button_link }} {% else %} {{ item.url }} {% endif %}">
             {% if item.button_text %} {{ item.button_text }} {% else %} Read More {% endif %}</a>
