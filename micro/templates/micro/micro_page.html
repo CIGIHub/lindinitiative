@@ -6,9 +6,6 @@
 {% block body_class %}template-{{ self.get_verbose_name|slugify }}{% endblock %}
 
 {% block content %}
-<div class="container">
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
       {% for section in self.sections.all %}
       <section>
         {% if section.button_text %}<a href="{{ section.button_link }}"{% if section.button_external %} target="_blank"{% endif %}>{% endif %}
@@ -25,13 +22,7 @@
 
       </section>
       {% endfor %}
-
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12 text-center">
+    <div class="text-center">
       <a href="#" class="btn btn-clear">Load More</a></div>
     </div>
-    </div>
-</div>
 {% endblock %}

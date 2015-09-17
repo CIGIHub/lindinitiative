@@ -52,7 +52,10 @@ class HomePage(Page):
     number_homepage_items = models.IntegerField(default=3, verbose_name="Items on Homepage")
 
     def latest(self):
-        return Page.objects.live().order_by('-first_published_at')[:self.number_homepage_items]
+       # /\ import pdb; pdb.set_trace()
+
+        latest = Page.objects.live().order_by('-first_published_at').exclude(title = 'Root')[:self.number_homepage_items]
+        return latest
 
     def __str__(self):
         return self.title
