@@ -9,7 +9,7 @@
         <h1>{{  self.title }}</h1>
     {% endif %}
     {% if self.image %}
-        {% image self.image fill-750x383 %}
+         <div class="post-image">{% image self.image fill-750x383 %}</div>
     {% endif %}
     {{ self.body|richtext}}
 {% endblock %}
