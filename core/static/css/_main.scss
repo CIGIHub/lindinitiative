@@ -259,6 +259,9 @@ section {
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
+  #main{
+    margin-top: 1em;
+  }
   .main-feature{
     min-height: 400px;
     h1 a{
@@ -283,6 +286,9 @@ section {
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px) {
+  #main{
+    margin-top: 0em;
+  }
   .main-feature{
     min-height: 320px;
     h1 a{
