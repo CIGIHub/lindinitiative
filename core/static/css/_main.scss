@@ -291,10 +291,10 @@ section {
   }
   footer{
     img{
-      max-width:50%;
+      max-width:55%;
     }
     .courses{
-      font-size: 0.8em;
+      font-size: 0.9em;
     }
   }
 }
@@ -304,6 +304,14 @@ section {
   header {
     margin-bottom: 0px;
     font-size: 15px;
+  }
+  footer{
+    img{
+      max-width:50%;
+    }
+    .courses{
+      font-size: 0.7em;
+    }
   }
 
 }
