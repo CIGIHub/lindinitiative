@@ -70,7 +70,7 @@ header {
 .navbar-default .navbar-nav.courses > li{
   margin-top: 14px;
 }
-.navbar-default .navbar-nav.courses >li > a{
+.navbar-default .navbar-nav.courses > li > a{
   border-left: 1px solid #666;
   padding: 10px 15px;
   color: #cccccc;
@@ -106,19 +106,21 @@ footer {
   padding-bottom: 2em;
 }
 
-footer img {
-  margin: 1em 0em;
-  display: inline-block;
-}
-
-footer .courses {
-  border-left: solid 1px #666666;
-  padding-left: 0.8em;
-  display:inline-block;
-  a{
-    color: #ccc;
+footer{
+  img {
+    margin: 1em 0em;
+    display: inline-block;
+  }
+  .courses {
+    border-left: solid 1px #666666;
+    padding-left: 0.8em;
+    display:inline-block;
+    a{
+      color: #ccc;
+    }
   }
 }
+
 
 .btn {
   color: #666666;
@@ -270,7 +272,7 @@ section {
   .navbar-nav{
     margin: 0px 10px;
   }
-  .navbar-default .navbar-nav > li.dropdown > a {
+  .navbar-default .navbar-nav.courses > li > a {
     border-left: 0px;
     color: #fff;
   }
@@ -287,6 +289,14 @@ section {
       font-size: 32px;
     }
   }
+  footer{
+    img{
+      max-width:55%;
+    }
+    .courses{
+      font-size: 0.9em;
+    }
+  }
 }
 
 /* Custom, iPhone Retina */
@@ -295,4 +305,5 @@ section {
     margin-bottom: 0px;
     font-size: 15px;
   }
+
 }
