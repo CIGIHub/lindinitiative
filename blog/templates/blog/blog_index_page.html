@@ -14,7 +14,7 @@
 
     {% for item in self.blogs %}
         <section>
-            <h2><a href="{{ item.url }}">{{ item.title }}</a></h2>
+            <h2><a href="{% if item.button_link %} {{ item.button_link }} {% else %} {{ item.url }} {% endif %}">{{ item.title }}</a></h2>
             <div class="post-image">{% image item.image fill-750x383 %}</div>
             <div class="short-description">{{ item.short_description }}</div>
             <a class="btn btn-clear" href="{% if item.button_link %} {{ item.button_link }} {% else %} {{ item.url }} {% endif %}">
