@@ -83,3 +83,15 @@ class LindBasePage(Page, basic_site_models.BasePage, FeatureMixin):
 
     promote_panels = Page.promote_panels + FeatureMixin.promote_panels
 
+
+class SiteIndexPage(Page):
+
+    @property
+    def pages(self):
+
+        pages = Page.objects.live().order_by('-first_published_at').exclude(title = 'Root').exclude(pk=self.pk)
+        return pages
+
+SiteIndexPage.content_panels = [
+    FieldPanel('title', classname="full title"),
+]
