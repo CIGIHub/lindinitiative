@@ -3,9 +3,9 @@ $blue: #002045;
 
 body {
   font-family: "Source Sans Pro", sans-serif;
-  font-weight: 200;
+  font-weight: 300;
   font-size: 17px;
-  background-color: #e1fdfd;
+  background-color: #e5f2ff;
   color: black;
 }
 
@@ -20,7 +20,7 @@ a h2:hover, a:hover, a h2:focus, a:focus {
 
 h1{
   text-transform: uppercase;
-  color: #666;
+  color: #000;
   font-weight: bold;
   border-bottom: solid thin black;
   padding-bottom: 0.2em;
@@ -169,7 +169,7 @@ section {
 
 .image-overlay{
   transition: background-color 0.5s ease;
-  background-color: #22a8ff;
+  background-color: #0099ff;
   min-height: 383px;
   position: relative;
   margin-bottom: 1em;
@@ -206,7 +206,7 @@ section {
 
 .main-feature {
   transition: background-color 0.5s ease;
-  background-color: #22a8ff;
+  background-color: #0099ff;
   min-height: 470px;
   position: relative;
 
