@@ -8,8 +8,8 @@
 {% block feature %}
     <div class="jumbotron main-feature image-overlay">
         {% image self.featured_item.specific.image fill-2048x1200 as background_image %}
-        <a href="{% if self.featured_item.specific.button_link %} {{ self.featured_item.specific.button_link }} {% else %} {{ self.featured_item.url }} {% endif %}">
-            <div class="post-image" style="background-image: url('{{ background_image.url }}') "></div>
+        <a href="{% if self.featured_item.specific.button_link %}{{ self.featured_item.specific.button_link }}{% else %}{{ self.featured_item.url }}{% endif %}">
+            <div class="post-image" style="background-image: url('{{ background_image.url }}')"></div>
         </a>
         <div class="container feature-wrapper">
             <div class="row">
@@ -33,7 +33,7 @@
 {% block content %}
     {% for item in self.latest %}
         <section>
-            <h2><a href="{% if item.specific.button_link %} {{ item.specific.button_link }} {% else %} {{ item.url }} {% endif %}">{{ item.title }}</a></h2>
+            <h2><a href="{% if item.specific.button_link %}{{ item.specific.button_link }}{% else %}{{ item.url }}{% endif %}">{{ item.title }}</a></h2>
             {% if item.specific.image %}
                 <div class="image-overlay">
                     {% image item.specific.image fill-750x383 as background_image %}
