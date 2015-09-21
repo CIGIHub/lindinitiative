@@ -174,7 +174,7 @@ section {
     position: absolute;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: bottom center;
+    background-position: center;
     width: 100%;
     height: 100%;
     transition: opacity 0.5s ease;
@@ -282,6 +282,10 @@ section {
 @media only screen and (max-width : 480px) {
   #main{
     margin-top: 0em;
+  }
+  .image-overlay{
+    min-height: 200px;
+
   }
   .main-feature{
     min-height: 320px;
