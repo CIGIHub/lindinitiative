@@ -137,10 +137,13 @@ footer {
 }
 
 .btn{
+  -webkit-transition: background-color 0.5s ease;
+  -moz-transition: background-color 0.5s ease;
+  -o-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
   color: $grey;
   text-transform: uppercase;
   font-weight: 100;
-  transition: background-color 0.5s ease;
   margin-top: 1em;
   margin-bottom: 2em;
 }
@@ -165,6 +168,9 @@ section {
 }
 
 .image-overlay{
+  -webkit-transition: background-color 0.5s ease;
+  -moz-transition: background-color 0.5s ease;
+  -o-transition: background-color 0.5s ease;
   transition: background-color 0.5s ease;
   background-color: #0099ff;
   min-height: 383px;
@@ -217,6 +223,9 @@ section {
   }
 
   .btn {
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
     transition: none;
     margin-top: 2em;
     border: solid 1px $white;
@@ -229,7 +238,10 @@ section {
   }
 
   &.image-overlay {
-    transition:none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
   }
   &.image-overlay:hover{
     background-color: #0099ff;
