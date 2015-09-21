@@ -6,52 +6,49 @@
 
 
 {% block feature %}
-    <div class="jumbotron main-feature overlay">
-    {% image self.featured_item.specific.image fill-2048x1200 as background_image %}
-    <a href="{% if self.featured_item.specific.button_link %} {{ self.featured_item.specific.button_link }} {% else %} {{ self.featured_item.url }} {% endif %}">
-        <div class="feature-image" style="background-image: url('{{ background_image.url }}') ">
-        </div>
-    </a>
-    <div class="container feature-wrapper">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="feature-text">
-                    <h1>
-                        <a href="{% if self.featured_item.specific.button_link %} {{ self.featured_item.specific.button_link }} {% else %} {{ self.featured_item.url }} {% endif %}">{{ self.featured_item.title }}</a>
-                    </h1>
+    <div class="jumbotron main-feature image-overlay">
+        {% image self.featured_item.specific.image fill-2048x1200 as background_image %}
+        <a href="{% if self.featured_item.specific.button_link %} {{ self.featured_item.specific.button_link }} {% else %} {{ self.featured_item.url }} {% endif %}">
+            <div class="post-image" style="background-image: url('{{ background_image.url }}') "></div>
+        </a>
+        <div class="container feature-wrapper">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="feature-text">
+                        <h1>
+                            <a href="{% if self.featured_item.specific.button_link %} {{ self.featured_item.specific.button_link }} {% else %} {{ self.featured_item.url }} {% endif %}">{{ self.featured_item.title }}</a>
+                        </h1>
 
-                    <a class="btn btn-clear" href="{% if self.featured_item.specific.button_link %} {{ self.featured_item.specific.button_link }} {% else %} {{ self.featured_item.url }} {% endif %}">
-                        {% if self.featured_item.specific.button_text %} {{ self.featured_item.specific.button_text }} {% else %} Read More {% endif %}</a>
+                        <a class="btn btn-clear" href="{% if self.featured_item.specific.button_link %} {{ self.featured_item.specific.button_link }} {% else %} {{ self.featured_item.url }} {% endif %}">
+                            {% if self.featured_item.specific.button_text %} {{ self.featured_item.specific.button_text }} {% else %} Read More {% endif %}</a>
+                    </div>
                 </div>
             </div>
+
         </div>
 
     </div>
-
-</div>
 {% endblock %}
 
 {% block content %}
-        {% for item in self.latest %}
-
-            <section>
-                <h2><a href="{% if item.specific.button_link %} {{ item.specific.button_link }} {% else %} {{ item.url }} {% endif %}">{{ item.title }}</a></h2>
-                {% if item.specific.image %}
-                    <div class="image-overlay">
-                        {% image item.specific.image fill-750x383 as background_image %}
-                        <a href="{% if item.specific.button_link %} {{ item.specific.button_link }} {% else %} {{ item.url }} {% endif %}">
-                            <div class="post-image " style="background-image: url('{{ background_image.url }}') ">
-                            </div>
-                        </a>
-                    </div>
-                {% endif %}
-                <div class="short-description">{{ item.specific.short_description }}</div>
-                <a class="btn btn-clear" href="{% if item.specific.button_link %} {{ item.specific.button_link }} {% else %} {{ item.url }} {% endif %}">
-                {% if item.specific.button_text %} {{ item.specific.button_text }} {% else %} Read More {% endif %}
-                {% if item.specific.button_external %}<i class="fa fa-external-link"></i>{% endif %}
-                </a>
-            </section>
-
+    {% for item in self.latest %}
+        <section>
+            <h2><a href="{% if item.specific.button_link %} {{ item.specific.button_link }} {% else %} {{ item.url }} {% endif %}">{{ item.title }}</a></h2>
+            {% if item.specific.image %}
+                <div class="image-overlay">
+                    {% image item.specific.image fill-750x383 as background_image %}
+                    <a href="{% if item.specific.button_link %} {{ item.specific.button_link }} {% else %} {{ item.url }} {% endif %}">
+                        <div class="post-image " style="background-image: url('{{ background_image.url }}') ">
+                        </div>
+                    </a>
+                </div>
+            {% endif %}
+            <div class="short-description">{{ item.specific.short_description }}</div>
+            <a class="btn btn-clear" href="{% if item.specific.button_link %} {{ item.specific.button_link }} {% else %} {{ item.url }} {% endif %}">
+            {% if item.specific.button_text %} {{ item.specific.button_text }} {% else %} Read More {% endif %}
+            {% if item.specific.button_external %}<i class="fa fa-external-link"></i>{% endif %}
+            </a>
+        </section>
     {% endfor %}
 {#   <div class="load-more text-center">#}
 {#        <a class="btn btn-clear" href="/browse-content">Load More</a>#}

@@ -43,35 +43,35 @@
 
   <body class="{% block body_class %}{% endblock %}">
     {% wagtailuserbar %}
+
     <header>
-
       <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                  <!-- Brand and toggle get grouped for better mobile display -->
-                  <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                      <span class="sr-only">Toggle navigation</span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                    </button>
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
 
-                    <a class="navbar-brand" href="/"><img class="logo" src="{% static 'img/lind-logo.png' width-226 %}"></a>
-                  </div>
-                  <!-- Collect the nav links, forms, and other content for toggling -->
-                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav courses">
-                      <li><a href="/inequality">Year 1: Inequality </a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                      <li><a href="/about">About</a></li>
-                      <li><a href="/course">Course</a></li>
-                      <li><a href="/events">Events</a></li>
-                      <li><a href="/blog">Blog</a></li>
-                    </ul>
-                  </div><!-- /.navbar-collapse -->
-                </div><!-- /.container-fluid -->
-              </nav>
+            <a class="navbar-brand" href="/"><img class="logo" src="{% static 'img/lind-logo.png' width-226 %}"></a>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav courses">
+              <li><a href="/inequality">Year 1: Inequality </a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/about">About</a></li>
+              <li><a href="/course">Course</a></li>
+              <li><a href="/events">Events</a></li>
+              <li><a href="/blog">Blog</a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
     </header>
 
     {% block feature %}{% endblock %}
@@ -103,7 +103,6 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="{% static 'jquery/dist/jquery.min.js' %}"><\/script>')</script>
     <script src="{% static 'bootstrap-sass/assets/javascripts/bootstrap.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/lindinitiative.js' %}"></script>
 
     {% block extra_js %}
         {# Override this in templates to add extra javascript #}
