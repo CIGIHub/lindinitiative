@@ -10,11 +10,53 @@ from wagtail.wagtailadmin.edit_handlers import (FieldPanel, MultiFieldPanel,
 from wagtail.wagtailcore.models import Page
 
 from core.mixin import FeatureMixin
-from blog.models import BlogPage
+from blog.models import BlogPage, BlogIndexPage
+from micro.models import MicroPage
 
+
+class LindBasePage(Page, basic_site_models.BasePage, FeatureMixin):
+
+    content_panels = Page.content_panels + [
+        FieldPanel('body', classname="full"),
+    ]
+
+    promote_panels = Page.promote_panels + FeatureMixin.promote_panels
+
+
+class SiteIndexPage(Page):
+    subpage_types = [
+        LindBasePage,
+        BlogIndexPage,
+        MicroPage,
+    ]
+    @property
+    def pages(self):
+
+        blog_content_type = ContentType.objects.get_for_model(
+            BlogPage)
+        page_content_type = ContentType.objects.get_for_model(
+            LindBasePage)
+
+        pages = Page.objects.live().filter(
+            models.Q(content_type=blog_content_type)
+            | models.Q(content_type=page_content_type)
+        )
+        pages = pages.order_by('-first_published_at')
+
+        return pages
+
+SiteIndexPage.content_panels = [
+    FieldPanel('title', classname="full title"),
+]
 
 @python_2_unicode_compatible
 class HomePage(Page):
+    subpage_types = [
+        LindBasePage,
+        BlogIndexPage,
+        SiteIndexPage,
+        MicroPage,
+    ]
 
     featured_item = models.ForeignKey(
         'wagtailcore.Page',
@@ -60,22 +102,3 @@ class HomePage(Page):
     ]
 
 
-class LindBasePage(Page, basic_site_models.BasePage, FeatureMixin):
-    content_panels = Page.content_panels + [
-        FieldPanel('body', classname="full"),
-    ]
-
-    promote_panels = Page.promote_panels + FeatureMixin.promote_panels
-
-
-class SiteIndexPage(Page):
-
-    @property
-    def pages(self):
-
-        pages = Page.objects.live().order_by('-first_published_at').exclude(title='Root').exclude(pk=self.pk)
-        return pages
-
-SiteIndexPage.content_panels = [
-    FieldPanel('title', classname="full title"),
-]

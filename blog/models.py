@@ -7,7 +7,30 @@ from wagtail.wagtailcore.models import Page
 from core.mixin import FeatureMixin
 
 
+class BlogPage(Page, FeatureMixin):
+    body = RichTextField()
+    date = models.DateField("Post date")
+    author = models.TextField(max_length=512, blank=True)
+
+    @property
+    def blog_index(self):
+        # Find closest ancestor which is a blog index
+        return self.get_ancestors().type(BlogIndexPage).last()
+
+BlogPage.content_panels = [
+    FieldPanel('title', classname="full title"),
+    FieldPanel('date'),
+    FieldPanel('author'),
+    FieldPanel('body', classname="full"),
+]
+
+BlogPage.promote_panels = Page.promote_panels + FeatureMixin.promote_panels
+
 class BlogIndexPage(Page):
+    subpage_types = [
+        BlogPage,
+    ]
+
     intro = RichTextField(blank=True)
 
     @property
@@ -50,23 +73,3 @@ BlogIndexPage.content_panels = [
 ]
 
 BlogIndexPage.promote_panels = Page.promote_panels
-
-
-class BlogPage(Page, FeatureMixin):
-    body = RichTextField()
-    date = models.DateField("Post date")
-    author = models.TextField(max_length=512, blank=True)
-
-    @property
-    def blog_index(self):
-        # Find closest ancestor which is a blog index
-        return self.get_ancestors().type(BlogIndexPage).last()
-
-BlogPage.content_panels = [
-    FieldPanel('title', classname="full title"),
-    FieldPanel('date'),
-    FieldPanel('author'),
-    FieldPanel('body', classname="full"),
-]
-
-BlogPage.promote_panels = Page.promote_panels + FeatureMixin.promote_panels
