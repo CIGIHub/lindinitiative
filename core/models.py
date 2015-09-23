@@ -4,12 +4,13 @@ from basic_site import models as basic_site_models
 from django.db import models
 from django.contrib.contenttypes.models import ContentType
 from django.utils.encoding import python_2_unicode_compatible
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 
 from wagtail.wagtailadmin.edit_handlers import (FieldPanel, MultiFieldPanel,
                                                 PageChooserPanel)
 from wagtail.wagtailcore.models import Page
 
-from core.mixin import FeatureMixin
+from core.mixin import FeatureMixin, PaginatedListPageMixin
 from blog.models import BlogPage, BlogIndexPage
 from micro.models import MicroPage
 
@@ -22,16 +23,12 @@ class LindBasePage(Page, basic_site_models.BasePage, FeatureMixin):
 
     promote_panels = Page.promote_panels + FeatureMixin.promote_panels
 
+class PageList(models.Model):
 
-class SiteIndexPage(Page):
-    subpage_types = [
-        LindBasePage,
-        BlogIndexPage,
-        MicroPage,
-    ]
-    @property
+    class Meta:
+        abstract = True
+
     def pages(self):
-
         blog_content_type = ContentType.objects.get_for_model(
             BlogPage)
         page_content_type = ContentType.objects.get_for_model(
@@ -41,16 +38,43 @@ class SiteIndexPage(Page):
             models.Q(content_type=blog_content_type)
             | models.Q(content_type=page_content_type)
         )
-        pages = pages.order_by('-first_published_at')
 
+        pages = pages.order_by('-first_published_at')
         return pages
+
+
+class SiteIndexPage(PaginatedListPageMixin, Page, PageList):
+    subpage_types = [
+        LindBasePage,
+        BlogIndexPage,
+        MicroPage,
+    ]
+
+    posts_per_page = models.IntegerField(default=10)
+    counter_field_name = 'posts_per_page'
+    counter_context_name = 'posts'
+
+    @property
+    def subpages(self):
+
+        all_pages = self.pages()
+        page_list = []
+
+        for page in all_pages.all():
+            typed_page = page.content_type.get_object_for_this_type(
+                id=page.id)
+            page_list.append(typed_page)
+
+        return page_list
+
 
 SiteIndexPage.content_panels = [
     FieldPanel('title', classname="full title"),
+    FieldPanel('posts_per_page'),
 ]
 
 @python_2_unicode_compatible
-class HomePage(Page):
+class HomePage(Page, PageList):
     subpage_types = [
         LindBasePage,
         BlogIndexPage,
@@ -67,21 +91,19 @@ class HomePage(Page):
     )
 
     number_homepage_items = models.IntegerField(default=3, verbose_name="Items on Homepage")
+    more_link = False
 
     def latest(self):
 
-        blog_content_type = ContentType.objects.get_for_model(
-            BlogPage)
-        page_content_type = ContentType.objects.get_for_model(
-            LindBasePage)
-
-        latest = Page.objects.live().filter(
-            models.Q(content_type=blog_content_type)
-            | models.Q(content_type=page_content_type)
-        )
-        latest = latest.exclude(pk=self.featured_item.pk)[:self.number_homepage_items]
-
+        latest = self.pages().exclude(pk=self.featured_item.pk)[:self.number_homepage_items]
         return latest
+
+    def more_link(self):
+
+        if len(self.pages()) > self.number_homepage_items:
+            more_link = True
+
+        return more_link
 
     def __str__(self):
         return self.title

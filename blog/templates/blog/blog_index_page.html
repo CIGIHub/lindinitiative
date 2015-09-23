@@ -12,7 +12,7 @@
         {{ self.intro|richtext }}
     {% endif %}
 
-    {% for item in self.blogs %}
+    {% for item in posts %}
         <section>
             <h2><a href="{% if item.button_link %} {{ item.button_link }} {% else %} {{ item.url }} {% endif %}">{{ item.title }}</a></h2>
             {% if item.image %}
@@ -31,5 +31,23 @@
         </section>
 
     {% endfor %}
+
+    {% if posts.paginator.num_pages > 1 %}
+        <ul class="pager">
+            <li class="previous">
+                {% if posts.has_previous %}
+                    <a href="?page={{ posts.previous_page_number }}{% for key,value in request.GET.items %}{% ifnotequal key 'page' %}&amp;{{ key }}={{ value }}{% endifnotequal %}{% endfor %}">Previous</a>
+                {% endif %}
+            </li>
+            <li class="pages">
+                Page {{ posts.number }} of {{ posts.paginator.num_pages }}
+            </li>
+            <li class="next">
+                {% if posts.has_next %}
+                    <a href="?page={{ posts.next_page_number }}{% for key,value in request.GET.items %}{% ifnotequal key 'page' %}&amp;{{ key }}={{ value }}{% endifnotequal %}{% endfor %}">Next</a>
+                {% endif %}
+            </li>
+        </ul>
+    {% endif %}
 
 {% endblock %}

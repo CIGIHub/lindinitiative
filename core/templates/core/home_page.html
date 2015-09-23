@@ -50,7 +50,9 @@
             </a>
         </section>
     {% endfor %}
-{#   <div class="load-more text-center">#}
-{#        <a class="btn btn-clear" href="/browse-content">Load More</a>#}
-{#   </div>#}
+    {% if self.more_link %}
+       <div class="load-more text-center">
+            <a class="btn btn-clear" href="/view-all">View All</a>
+       </div>
+    {% endif %}
 {% endblock %}
