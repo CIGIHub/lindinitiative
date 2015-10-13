@@ -9,11 +9,7 @@
         <h1>{{  self.title }}</h1>
     {% endif %}
     {% if self.image %}
-        <div class="image-overlay">
-            {% image self.image fill-750x383 as background_image %}
-            <div class="post-image " style="background-image: url('{{ background_image.url }}') ">
-            </div>
-        </div>
+        {% image self.image fill-750x383%}
     {% endif %}
     {{ self.body|richtext}}
 {% endblock %}
