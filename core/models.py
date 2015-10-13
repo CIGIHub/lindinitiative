@@ -15,7 +15,7 @@ from micro.models import MicroPage
 
 class LindBasePage(Page, basic_site_models.BasePage, FeatureMixin):
     def __init__(self, *args, **kwargs):
-        super(BlogPage, self).__init__(*args, **kwargs)
+        super(LindBasePage, self).__init__(*args, **kwargs)
         for field in self._meta.fields:
             if field.name == 'first_published_at':
                 field.editable = True
