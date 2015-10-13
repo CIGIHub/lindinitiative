@@ -1,27 +1,34 @@
 from __future__ import absolute_import, unicode_literals
 
 from basic_site import models as basic_site_models
-from django.db import models
 from django.contrib.contenttypes.models import ContentType
+from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
-from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
-
 from wagtail.wagtailadmin.edit_handlers import (FieldPanel, MultiFieldPanel,
                                                 PageChooserPanel)
 from wagtail.wagtailcore.models import Page
 
+from blog.models import BlogIndexPage, BlogPage
 from core.mixin import FeatureMixin, PaginatedListPageMixin
-from blog.models import BlogPage, BlogIndexPage
 from micro.models import MicroPage
 
 
 class LindBasePage(Page, basic_site_models.BasePage, FeatureMixin):
+    def __init__(self, *args, **kwargs):
+        super(BlogPage, self).__init__(*args, **kwargs)
+        for field in self._meta.fields:
+            if field.name == 'first_published_at':
+                field.editable = True
+                field.blank = True
 
     content_panels = Page.content_panels + [
         FieldPanel('body', classname="full"),
     ]
 
     promote_panels = Page.promote_panels + FeatureMixin.promote_panels
+
+    settings_panels = [FieldPanel('first_published_at'), ] + Page.settings_panels
+
 
 class PageList(models.Model):
 
@@ -73,6 +80,7 @@ SiteIndexPage.content_panels = [
     FieldPanel('posts_per_page'),
 ]
 
+
 @python_2_unicode_compatible
 class HomePage(Page, PageList):
     subpage_types = [
@@ -122,5 +130,3 @@ class HomePage(Page, PageList):
             heading="Homepage Feed"
         ),
     ]
-
-

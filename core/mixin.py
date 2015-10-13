@@ -2,10 +2,9 @@ from __future__ import absolute_import, unicode_literals
 
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.db import models
-from wagtail.wagtailadmin.edit_handlers import (FieldPanel, MultiFieldPanel,
-                                                PageChooserPanel)
-
+from wagtail.wagtailadmin.edit_handlers import FieldPanel, MultiFieldPanel
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
+
 
 class FeatureMixin(models.Model):
     short_description = models.CharField(max_length=256, blank=False)

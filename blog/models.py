@@ -1,4 +1,3 @@
-from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.db import models
 from wagtail.wagtailadmin.edit_handlers import FieldPanel
 from wagtail.wagtailcore.fields import RichTextField
@@ -12,19 +11,28 @@ class BlogPage(Page, FeatureMixin):
     date = models.DateField("Post date")
     author = models.TextField(max_length=512, blank=True)
 
+    def __init__(self, *args, **kwargs):
+        super(BlogPage, self).__init__(*args, **kwargs)
+        for field in self._meta.fields:
+            if field.name == 'first_published_at':
+                field.editable = True
+                field.blank = True
+
     @property
     def blog_index(self):
         # Find closest ancestor which is a blog index
         return self.get_ancestors().type(BlogIndexPage).last()
 
-BlogPage.content_panels = [
-    FieldPanel('title', classname="full title"),
-    FieldPanel('date'),
-    FieldPanel('author'),
-    FieldPanel('body', classname="full"),
-]
+    content_panels = [
+        FieldPanel('title', classname="full title"),
+        FieldPanel('date'),
+        FieldPanel('author'),
+        FieldPanel('body', classname="full"),
+    ]
 
-BlogPage.promote_panels = Page.promote_panels + FeatureMixin.promote_panels
+    promote_panels = Page.promote_panels + FeatureMixin.promote_panels
+    settings_panels = [FieldPanel('first_published_at'), ] + Page.settings_panels
+
 
 class BlogIndexPage(PaginatedListPageMixin, Page):
     subpage_types = [
@@ -46,10 +54,10 @@ class BlogIndexPage(PaginatedListPageMixin, Page):
 
         return blogs
 
-BlogIndexPage.content_panels = [
-    FieldPanel('title', classname="full title"),
-    FieldPanel('intro', classname="full"),
-    FieldPanel('posts_per_page'),
-]
+    content_panels = [
+        FieldPanel('title', classname="full title"),
+        FieldPanel('intro', classname="full"),
+        FieldPanel('posts_per_page'),
+    ]
 
-BlogIndexPage.promote_panels = Page.promote_panels
+    promote_panels = Page.promote_panels
