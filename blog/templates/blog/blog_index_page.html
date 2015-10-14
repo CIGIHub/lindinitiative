@@ -17,11 +17,7 @@
             <h2><a href="{% if item.button_link %} {{ item.button_link }} {% else %} {{ item.url }} {% endif %}">{{ item.title }}</a></h2>
             {% if item.image %}
                 <a href="{% if item.button_link %} {{ item.button_link }} {% else %} {{ item.url }} {% endif %}">
-                <div class="image-overlay">
-                    {% image item.image fill-750x383 as background_image %}
-                    <div class="post-image " style="background-image: url('{{ background_image.url }}') ">
-                    </div>
-                </div>
+                {% image item.image fill-750x383 %}
                 </a>
             {% endif %}
 
